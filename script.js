@@ -93,4 +93,12 @@ fetch('words.json')
     words = data;
     const home = document.getElementById('home');
     home.querySelector('p').innerHTML += `<br/>Currently loaded ${words.length} words.`;
-  });
+    // if a learning page was opened before data loaded, populate it now
+    if (document.getElementById('study').classList.contains('active')) {
+      nextWord();
+    }
+    if (document.getElementById('quiz').classList.contains('active')) {
+      nextQuestion();
+    }
+  })
+  .catch(err => console.error('Failed to load words', err));
