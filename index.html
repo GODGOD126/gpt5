@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <h1>Word Explorer</h1>
+    <ul>
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('study')">Study</a></li>
+      <li><a href="#" onclick="showPage('quiz')">Quiz</a></li>
+      <li><a href="#" onclick="showPage('progress')">Progress</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="home" class="page active">
+      <h2>Welcome</h2>
+      <p>Explore 500 essential English words through play. Use Study mode to learn and Quiz to test yourself. Your progress is saved automatically.</p>
+      <button class="primary" onclick="showPage('study')">Start Learning</button>
+    </section>
+
+    <section id="study" class="page">
+      <div id="study-card" class="card">
+        <div class="word">Loading...</div>
+        <div class="phonetic"></div>
+        <div class="translation"></div>
+      </div>
+      <div class="actions">
+        <button onclick="markKnown()">I Know</button>
+        <button onclick="nextWord()">Next</button>
+      </div>
+    </section>
+
+    <section id="quiz" class="page">
+      <div id="quiz-card" class="card">
+        <div class="question">Loading...</div>
+        <div class="options"></div>
+      </div>
+    </section>
+
+    <section id="progress" class="page">
+      <h2>Your Progress</h2>
+      <div id="progress-stats"></div>
+      <div class="lists">
+        <div>
+          <h3>Learned</h3>
+          <ul id="learned-list"></ul>
+        </div>
+        <div>
+          <h3>Unlearned</h3>
+          <ul id="unlearned-list"></ul>
+        </div>
+        <div>
+          <h3>Mistakes</h3>
+          <ul id="wrong-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
